@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8529812126654831873}
   - component: {fileID: 8529812126654831879}
   - component: {fileID: 8529812126654831876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cat
   m_TagString: Cat
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8529812126654831901}
-  m_LocalRotation: {x: -0, y: -0, z: -0.00323844, w: 0.99999475}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0032376074, w: 0.9999948}
   m_LocalPosition: {x: 0.078203075, y: -0.48, z: 0}
   m_LocalScale: {x: 2.9631786, y: 2.2371092, z: 1}
   m_ConstrainProportionsScale: 0
@@ -189,3 +189,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   JumpForce: 5
+  catLifeText: {fileID: 0}

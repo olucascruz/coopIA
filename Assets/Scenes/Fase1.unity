@@ -1716,7 +1716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b68fe6b7ba890479efe8e746085fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: '|Fase2'
+  nextScene: Fase2
 --- !u!58 &1353718140
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2209,10 +2209,6 @@ PrefabInstance:
     - target: {fileID: 8529812126654831901, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
       propertyPath: m_Name
       value: Cat
-      objectReference: {fileID: 0}
-    - target: {fileID: 8529812126654831901, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
