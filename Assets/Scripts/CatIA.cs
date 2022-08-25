@@ -10,33 +10,37 @@ public class CatIA : MonoBehaviour
     private Animator anim;
     public float speed;
     public float JumpForce;
-    private int isMove;
-    private int isJump;
     private  int catLife = 7;
     public Text catLifeText;
-    // Start is called before the first frame update
+    private bool colliding;
+    [SerializeField]
+    private Transform startLine;
+    [SerializeField]
+    private Transform endLine;
+    [SerializeField]
+    private LayerMask layer;
+    
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        isMove = Random.Range(0, 5);
-        isJump = Random.Range(0, 8);
+        
         catLifeText.text = "Vidas: "+ catLife.ToString();
         if(this.catLife < 1){
              SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        colliding = Physics2D.Linecast(startLine.position, endLine.position, layer);
     }
 
     private void FixedUpdate() {
-        if(isMove>0){
-            Move();
-        }
-        if(isJump == 0){
+        
+        Move();
+        if(colliding){
             Jump();
         }
     }

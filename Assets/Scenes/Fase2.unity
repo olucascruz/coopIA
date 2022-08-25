@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 1290008935}
   - component: {fileID: 1290008934}
   - component: {fileID: 1290008936}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3525,7 +3525,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.072785, y: 1}
+    m_SensorSize: {x: 2.079365, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
