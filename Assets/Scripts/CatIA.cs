@@ -20,6 +20,7 @@ public class CatIA : MonoBehaviour
     [SerializeField]
     private LayerMask layer;
     
+    private string state = "RUN";
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -39,10 +40,13 @@ public class CatIA : MonoBehaviour
 
     private void FixedUpdate() {
         
-        Move();
-        if(colliding){
-            Jump();
+        if(this.state == "RUN"){
+            Move();
+            if(colliding){
+                Jump();
+            }
         }
+       
     }
 
 
@@ -66,9 +70,18 @@ public class CatIA : MonoBehaviour
         }
         if(collision.gameObject.tag == "Enemy")
         {
+            this.state = "STOPED";
             this.catLife--;
         }
         
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            this.state = "RUN";
+        }
     }
 
 }

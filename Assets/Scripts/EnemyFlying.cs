@@ -11,16 +11,22 @@ public class EnemyFlying : Enemy
 
     private Vector2 originPosition;
 
-    // Start is called before the first frame update
+    private bool collidingWithCat = false;
+
     void Start()
     {
         positionPlayer = GameObject.FindGameObjectWithTag("Cat").transform;
         originPosition = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if(!collidingWithCat){
+            Move();
+        }
+    }
+
+    private void Move(){
         if(positionPlayer.gameObject != null)
         {
             if(Vector2.Distance(transform.position, positionPlayer.position) < distanceDetection)
@@ -37,5 +43,28 @@ public class EnemyFlying : Enemy
                                                         speed * Time.deltaTime);
             }
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+       
+        if(collision.gameObject.tag == "Cat")
+        {
+            this.collidingWithCat = true;
+        }
+        if(collision.gameObject.tag == "Arrow")
+        {
+           Destroy(gameObject);
+        }
+        
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Cat")
+        {
+            this.collidingWithCat = false;
+        }
+        
     }
 }
