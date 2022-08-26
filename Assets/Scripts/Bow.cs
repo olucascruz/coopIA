@@ -21,6 +21,8 @@ public class Bow : MonoBehaviour
 
     private int qntArrows = 5;
 
+    private bool isRealod = false;
+
     void Start()
     {
         points = new GameObject[numberOfPoints];
@@ -39,12 +41,10 @@ public class Bow : MonoBehaviour
         direction = mousePosition - bowPosition;
         transform.right = direction;
 
-        if(Input.GetMouseButtonDown(0)){
-            if(this.qntArrows > 0){
-                Shoot();
-            }
-            UpdateArrows();
+        if(Input.GetMouseButtonDown(0) && !isRealod){
+            Shoot();
             this.qntArrows--;
+            UpdateArrows();
         }
         for (int i = 0; i < numberOfPoints; i++)
         {
@@ -66,9 +66,10 @@ public class Bow : MonoBehaviour
 
     public void UpdateArrows(){
 
-        if(this.qntArrows <= 0){
+        if(this.qntArrows < 1){
             this.qntArrows = 0;
-            ReloadBow();
+            isRealod = true;
+            Invoke("ReloadBow", 1f);
         }
         if(this.qntArrows > 5){
             this.qntArrows = 5;
@@ -78,9 +79,12 @@ public class Bow : MonoBehaviour
 
     public void ReloadBow(){
         this.qntArrows++;
+        if(this.qntArrows == 5){
+            isRealod = false;
+        }
 
         if(this.qntArrows < 5){
-            Invoke("ReloadBow", 2f);
+            Invoke("ReloadBow", 0.2f);
         }
     }
 
