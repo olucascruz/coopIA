@@ -72,6 +72,8 @@ public class CatIA : MonoBehaviour
         {
             this.state = "STOPED";
             this.catLife--;
+        }else{
+            this.state = "RUN";
         }
         
     }

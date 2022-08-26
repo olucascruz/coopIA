@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bow : MonoBehaviour
 {
@@ -13,8 +14,13 @@ public class Bow : MonoBehaviour
     GameObject[] points;
     public int numberOfPoints;
     public float spaceBetweenPoints;
-    Vector2 direction;
-    // Start is called before the first frame update
+    private Vector2 direction;
+
+    [SerializeField]
+    private Image[] arrows;
+
+    private int qntArrows = 5;
+
     void Start()
     {
         points = new GameObject[numberOfPoints];
@@ -24,7 +30,7 @@ public class Bow : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         transform.position = new Vector3(player.position.x, player.position.y, transform.position.z); 
@@ -34,12 +40,18 @@ public class Bow : MonoBehaviour
         transform.right = direction;
 
         if(Input.GetMouseButtonDown(0)){
-            Shoot();
+            if(this.qntArrows > 0){
+                Shoot();
+            }
+            UpdateArrows();
+            this.qntArrows--;
         }
         for (int i = 0; i < numberOfPoints; i++)
         {
             points[i].transform.position = PointPositoin(i * spaceBetweenPoints); 
         }
+        ShowArrows();
+
     }
 
     public void Shoot(){
@@ -47,8 +59,87 @@ public class Bow : MonoBehaviour
         newArrow.GetComponent<Rigidbody2D>().velocity = transform.right * launchForce;
     }
 
-    Vector2 PointPositoin(float t){
+    public Vector2 PointPositoin(float t){
         Vector2 position = (Vector2)shotPoint.position + (direction.normalized * launchForce * t) + 0.5f  * Physics2D.gravity * (t * t);
         return position;
     }
+
+    public void UpdateArrows(){
+
+        if(this.qntArrows <= 0){
+            this.qntArrows = 0;
+            ReloadBow();
+        }
+        if(this.qntArrows > 5){
+            this.qntArrows = 5;
+        }
+
+    }
+
+    public void ReloadBow(){
+        this.qntArrows++;
+
+        if(this.qntArrows < 5){
+            Invoke("ReloadBow", 2f);
+        }
+    }
+
+    public void ShowArrows(){
+         switch (this.qntArrows)
+       {
+        case 0:
+            arrows[0].enabled =false;
+            arrows[1].enabled =false;
+            arrows[2].enabled =false;
+            arrows[3].enabled =false;
+            arrows[4].enabled =false;
+
+            break;
+        case 1:
+            arrows[0].enabled =true;
+            arrows[1].enabled =false;
+            arrows[2].enabled =false;
+            arrows[3].enabled =false;
+            arrows[4].enabled =false;
+
+            break;
+        case 2:
+            arrows[0].enabled =true;
+            arrows[1].enabled =true;
+            arrows[2].enabled =false;
+            arrows[3].enabled =false;
+            arrows[4].enabled =false;
+            break;
+        case 3:
+            arrows[0].enabled =true;
+            arrows[1].enabled =true;
+            arrows[2].enabled =true;
+            arrows[3].enabled =false;
+            arrows[4].enabled =false;
+            break;
+        case 4:
+            arrows[0].enabled =true;
+            arrows[1].enabled =true;
+            arrows[2].enabled =true;
+            arrows[3].enabled =true;
+            arrows[4].enabled =false;
+            break;
+        case 5:
+            arrows[0].enabled =true;
+            arrows[1].enabled =true;
+            arrows[2].enabled =true;
+            arrows[3].enabled =true;
+            arrows[4].enabled =true;
+            break;        
+        default:
+            arrows[0].enabled =true;
+            arrows[1].enabled =true;
+            arrows[2].enabled =true;
+            arrows[3].enabled =true;
+            arrows[4].enabled =true;
+            break;        
+
+       }
+    }
+   
 }
