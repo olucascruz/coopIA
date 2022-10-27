@@ -1685,7 +1685,7 @@ TextureImporter:
       name: wolf_walking_6
       rect:
         serializedVersion: 2
-        x: 320
+        x: 319
         y: 0
         width: 63
         height: 31
@@ -1773,8 +1773,8 @@ TextureImporter:
         y: 190
         width: 64
         height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1794,8 +1794,8 @@ TextureImporter:
         y: 191
         width: 64
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1816,7 +1816,7 @@ TextureImporter:
         width: 66
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1836,8 +1836,8 @@ TextureImporter:
         y: 0
         width: 65
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1896,14 +1896,14 @@ TextureImporter:
       wolfsheet3_0: -107268791
       wolfsheet3_5: -247324772
       wolfsheet3_35: -908464201
-      wolfsheet3_13: 2006587769
-      wolfsheet3_39: 1418853415
       wolfsheet3_68: -1883650046
-      wolfsheet3_30: -133444522
+      wolfsheet3_39: 1418853415
+      wolfsheet3_13: 2006587769
       wolfsheet3_23: -1294090230
-      wolfsheet3_49: 1804138440
+      wolfsheet3_30: -133444522
       wolfsheet3_42: 1641503070
       wolfsheet3_3: 561378383
+      wolfsheet3_49: 1804138440
       wolf_walking_5: 683959751
       wolfsheet3_44: 216846030
       wolfsheet3_52: -337808252

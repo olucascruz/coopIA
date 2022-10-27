@@ -22,16 +22,24 @@ public class CatIA : MonoBehaviour
     private string state = "RUN";
 
     private bool isIntangible = false;
+
+    private LineRenderer lineRenderer;
+    [SerializeField] private Transform positionPlayer;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); 
+        lineRenderer = GetComponent<LineRenderer>();
     }
 
     
     void Update()
     {
-        
+        lineRenderer.SetPosition(0, startLine.position);
+        lineRenderer.SetPosition(1, positionPlayer.position);
+
+
         catLifeText.text = "Vidas: "+ catLife.ToString();
         if(this.catLife < 1){
              SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -62,7 +70,7 @@ public class CatIA : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 7)
         {
@@ -78,22 +86,13 @@ public class CatIA : MonoBehaviour
                 Invoke("NotIntangible", 1f);
         }
             
-        }else{
-            this.state = "RUN";
         }
         
     }
     
     void NotIntangible(){
         isIntangible = false;
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            this.state = "RUN";
-        }
+        this.state = "RUN";
     }
 
 }

@@ -8,6 +8,8 @@ public class FlashDamage : MonoBehaviour
     [SerializeField] private string tagCauseDamage;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+
+    private bool isIntangible = false;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -23,16 +25,30 @@ public class FlashDamage : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
         {
-            if(collision.gameObject.tag == tagCauseDamage)
+            
+            if(collision.gameObject.tag == tagCauseDamage && 
+            gameObject.tag != "Cat")
             {
                 EffectDamage();
             }
         }
+     void OnCollisionStay2D(Collision2D collision)
+        {
+            
+            if(collision.gameObject.tag == tagCauseDamage 
+            && gameObject.tag == "Cat")
+            { 
+                if(!isIntangible){
+                    EffectDamage();
+                }
+            }
+        }    
 
     public void EffectDamage(){
 
         if(gameObject.tag == "Cat"){
             spriteRenderer.color = new Color(1, 0, 0, 0.8f);
+            isIntangible = true;
         }
         else{
             spriteRenderer.color = new Color(1, 0, 0, 1);
@@ -44,6 +60,7 @@ public class FlashDamage : MonoBehaviour
 
     void ReturnNormal(){
         spriteRenderer.color = originalColor;
+        isIntangible = false;
     }
 
 

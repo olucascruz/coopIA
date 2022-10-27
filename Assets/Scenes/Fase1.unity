@@ -1350,7 +1350,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 1.1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_Follow: {fileID: 946595346}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 1
+    OrthographicSize: 1.1
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2422,6 +2422,11 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5805348676049890311, guid: 7620b59a53c9ba24ea5acd074552db95, type: 3}
   m_PrefabInstance: {fileID: 5805348674952239412}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2129458487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5805348676049890307, guid: 7620b59a53c9ba24ea5acd074552db95, type: 3}
+  m_PrefabInstance: {fileID: 5805348674952239412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4300744233964611030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2486,10 +2491,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5805348674732867959, guid: 7620b59a53c9ba24ea5acd074552db95, type: 3}
-      propertyPath: arrows.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5805348674732867959, guid: 7620b59a53c9ba24ea5acd074552db95, type: 3}
       propertyPath: arrows.Array.data[0]
       value: 
@@ -2615,6 +2616,10 @@ PrefabInstance:
       propertyPath: catLifeText
       value: 
       objectReference: {fileID: 452843034}
+    - target: {fileID: 8529812126654831876, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
+      propertyPath: positionPlayer
+      value: 
+      objectReference: {fileID: 2129458487}
     - target: {fileID: 8529812126654831879, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 

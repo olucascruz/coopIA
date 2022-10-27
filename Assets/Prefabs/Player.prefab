@@ -106,6 +106,12 @@ MonoBehaviour:
   point: {fileID: 512351265101229215, guid: 5692963b11670c149a8efdb41afed489, type: 3}
   numberOfPoints: 10
   spaceBetweenPoints: 0.02
+  arrows:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!50 &5805348674732867954
 Rigidbody2D:
   serializedVersion: 4
@@ -170,6 +176,7 @@ GameObject:
   - component: {fileID: 5805348676049890306}
   - component: {fileID: 5805348676049890305}
   - component: {fileID: 5805348676049890311}
+  - component: {fileID: 1773173976}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -280,9 +287,25 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -1
+  m_GravityScale: -2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &1773173976
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5805348676049890310}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.15

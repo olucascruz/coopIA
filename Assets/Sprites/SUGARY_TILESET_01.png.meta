@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 72
+  spritePixelsToUnits: 84
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -194,9 +194,9 @@ TextureImporter:
       name: SUGARY_TILESET_01_3
       rect:
         serializedVersion: 2
-        x: 98
+        x: 99
         y: 275
-        width: 45
+        width: 42
         height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -341,9 +341,9 @@ TextureImporter:
       name: SUGARY_TILESET_01_10
       rect:
         serializedVersion: 2
-        x: 98
+        x: 99
         y: 263
-        width: 44
+        width: 42
         height: 4
       alignment: 7
       pivot: {x: 0.5, y: 0}
