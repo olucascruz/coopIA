@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.tag == "Arrow")
         {
-           Destroy(gameObject);
+           Destroy(gameObject, 0.1f);
         }
     }
 

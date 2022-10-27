@@ -272,6 +272,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85e661fb1511e54fb5e02a43bb00fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashDamage: {fileID: 2100000, guid: 96f9200d36fd1cc49a6cb30f6c5675cd, type: 2}
   duration: 1
   tagCauseDamage: Enemy

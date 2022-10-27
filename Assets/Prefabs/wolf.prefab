@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 8951121007136022273}
   - component: {fileID: 8951121007136022272}
   - component: {fileID: 8951121007136022274}
+  - component: {fileID: 4846826638620405942}
   - component: {fileID: 8951121007136022278}
   - component: {fileID: 8951121007136022279}
   - component: {fileID: 844527433900407957}
@@ -143,6 +144,20 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &4846826638620405942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951121007136020733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85e661fb1511e54fb5e02a43bb00fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  tagCauseDamage: Arrow
 --- !u!95 &8951121007136022278
 Animator:
   serializedVersion: 4
