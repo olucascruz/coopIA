@@ -19,8 +19,9 @@ public class CatIA : MonoBehaviour
     private Transform endLine;
     [SerializeField]
     private LayerMask layer;
-    
     private string state = "RUN";
+
+    private bool isIntangible = false;
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -71,11 +72,20 @@ public class CatIA : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             this.state = "STOPED";
-            this.catLife--;
+            if(!isIntangible){
+                this.catLife--;
+                isIntangible = true;
+                Invoke("NotIntangible", 1f);
+        }
+            
         }else{
             this.state = "RUN";
         }
         
+    }
+    
+    void NotIntangible(){
+        isIntangible = false;
     }
 
     void OnCollisionExit2D(Collision2D collision)

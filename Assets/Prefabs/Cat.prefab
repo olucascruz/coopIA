@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 8529812126654831873}
   - component: {fileID: 8529812126654831879}
   - component: {fileID: 8529812126654831876}
+  - component: {fileID: 8529812125990746900}
   m_Layer: 3
   m_Name: Cat
   m_TagString: Cat
@@ -259,3 +260,18 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &8529812125990746900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8529812126654831901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85e661fb1511e54fb5e02a43bb00fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDamage: {fileID: 2100000, guid: 96f9200d36fd1cc49a6cb30f6c5675cd, type: 2}
+  duration: 1
+  tagCauseDamage: Enemy
