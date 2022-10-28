@@ -54,7 +54,7 @@ public class CatIA : MonoBehaviour
 
 
     public void Move(){
-        rb.velocity = new Vector2(speed, rb.velocity.y);
+        rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
     }
 
     void Jump()

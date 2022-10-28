@@ -240,7 +240,7 @@ DistanceJoint2D:
   m_ConnectedAnchor: {x: 0.5, y: 0}
   m_AutoConfigureDistance: 0
   m_Distance: 1
-  m_MaxDistanceOnly: 1
+  m_MaxDistanceOnly: 0
 --- !u!114 &8529812126654831876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,9 +253,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d943acbb0a8dcba42ad8b4bd47982987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 70
   JumpForce: 1
-  catLifeText: {fileID: 0}
+  heartCat:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   startLine: {fileID: 88373985646508010}
   endLine: {fileID: 6993830226926919525}
   layer:

@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8951121007136022278}
   - component: {fileID: 8951121007136022279}
   - component: {fileID: 844527433900407957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wolf
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -135,15 +135,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ecaea0833a8a4a4e8c3011351aea1f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 50
   rightCol: {fileID: 8951121007908584040}
   leftCol: {fileID: 8951121008212292392}
-  colliding: 1
+  collidingWithWall: 0
+  collidingWithWolf: 0
   distance: 0.2
   groundCheck: {fileID: 8951121007082582112}
   layer:
     serializedVersion: 2
     m_Bits: 128
+  layer2:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &4846826638620405942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8951121007908584043}
   m_LocalRotation: {x: -0.008468986, y: 0.007570432, z: -0.0012076251, w: 0.9999348}
-  m_LocalPosition: {x: -0.31, y: 0.07, z: 0.08480275}
+  m_LocalPosition: {x: -0.36, y: 0.07, z: 0.085}
   m_LocalScale: {x: 0.14053686, y: 0.19151399, z: 0.9973922}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -270,7 +274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8951121008212292395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.28, z: 0}
+  m_LocalPosition: {x: -0.36, y: 0.269, z: 0.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
