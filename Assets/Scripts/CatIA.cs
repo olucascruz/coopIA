@@ -23,6 +23,8 @@ public class CatIA : MonoBehaviour
 
     private bool isIntangible = false;
 
+    private bool isGround = false;
+
     private LineRenderer lineRenderer;
     [SerializeField] private Transform positionPlayer;
 
@@ -45,7 +47,7 @@ public class CatIA : MonoBehaviour
         
         if(this.state == "RUN"){
             Move();
-            if(colliding){
+            if(isGround && colliding){
                 Jump();
             }
         }
@@ -61,29 +63,7 @@ public class CatIA : MonoBehaviour
     {        
         rb.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
         anim.SetBool("jump", true);
-    }
-
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if(collision.gameObject.layer == 7)
-        {
-            anim.SetBool("jump", false);
-
-        }
-        if(collision.gameObject.tag == "Enemy")
-        {
-            this.state = "STOPED";
-            if(!isIntangible){
-                this.catLife--;
-                CheckDeath();  
-                isIntangible = true;
-                ShowHeart();
-                StartCoroutine(NotIntangible());
-        }
-            
-        }
-        
+        isGround = false;
     }
 
     void CheckDeath(){
@@ -131,4 +111,40 @@ public class CatIA : MonoBehaviour
         }
     }
 
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 7)
+        {
+            anim.SetBool("jump", false);
+
+        }
+        if(collision.gameObject.tag == "Enemy")
+        {
+            this.state = "STOPED";
+            if(!isIntangible){
+                this.catLife--;
+                CheckDeath();  
+                isIntangible = true;
+                ShowHeart();
+                StartCoroutine(NotIntangible());
+        }
+            
+        }
+        
+    }
+
+    void OnTriggerStay2D(Collider2D collider){
+        if(collider.gameObject.layer == 7)
+        {
+            isGround = true;
+        }
+    }
+
+
+
+
+
 }
+
+

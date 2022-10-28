@@ -501,21 +501,9 @@ PrefabInstance:
       value: -0.371
       objectReference: {fileID: 0}
     - target: {fileID: 8529812126654831876, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
-      propertyPath: speed
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 8529812126654831876, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
-      propertyPath: catLifeText
-      value: 
-      objectReference: {fileID: 1466255990}
-    - target: {fileID: 8529812126654831876, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
       propertyPath: positionPlayer
       value: 
       objectReference: {fileID: 1637138475}
-    - target: {fileID: 8529812126654831876, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
-      propertyPath: heartCat.Array.size
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 8529812126654831876, guid: 9f315b2744219864580bd1561e7a6c16, type: 3}
       propertyPath: heartCat.Array.data[0]
       value: 
