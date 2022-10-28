@@ -16,12 +16,6 @@ public class FlashDamage : MonoBehaviour
         originalColor = spriteRenderer.color;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
 
     void OnCollisionEnter2D(Collision2D collision)
         {
@@ -54,11 +48,11 @@ public class FlashDamage : MonoBehaviour
             spriteRenderer.color = new Color(1, 0, 0, 1);
         }
         
-
-        Invoke("ReturnNormal",duration);
+        StartCoroutine(ReturnNormal());
     }
 
-    void ReturnNormal(){
+    IEnumerator ReturnNormal(){
+        yield return new WaitForSeconds(duration);
         spriteRenderer.color = originalColor;
         isIntangible = false;
     }

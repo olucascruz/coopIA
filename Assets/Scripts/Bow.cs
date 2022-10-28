@@ -69,7 +69,7 @@ public class Bow : MonoBehaviour
         if(this.qntArrows < 1){
             this.qntArrows = 0;
             isRealod = true;
-            Invoke("ReloadBow", 1f);
+            StartCoroutine(ReloadBow());
         }
         if(this.qntArrows > 5){
             this.qntArrows = 5;
@@ -77,14 +77,16 @@ public class Bow : MonoBehaviour
 
     }
 
-    public void ReloadBow(){
-        this.qntArrows++;
-        if(this.qntArrows == 5){
-            isRealod = false;
+    public IEnumerator ReloadBow(){
+        if(this.qntArrows == 0){
+            yield return new WaitForSeconds(1f);
         }
-
-        if(this.qntArrows < 5){
-            Invoke("ReloadBow", 0.2f);
+        while(this.qntArrows < 5){
+            yield return new WaitForSeconds(0.2f);
+            this.qntArrows++;
+            if(this.qntArrows == 5){
+                isRealod = false;
+            }    
         }
     }
 

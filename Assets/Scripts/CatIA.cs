@@ -11,7 +11,7 @@ public class CatIA : MonoBehaviour
     public float speed;
     public float JumpForce;
     private  int catLife = 7;
-    public Text catLifeText;
+    [SerializeField] private Image[] heartCat;
     private bool colliding;
     [SerializeField]
     private Transform startLine;
@@ -38,12 +38,6 @@ public class CatIA : MonoBehaviour
     {
         lineRenderer.SetPosition(0, startLine.position);
         lineRenderer.SetPosition(1, positionPlayer.position);
-
-
-        catLifeText.text = "Vidas: "+ catLife.ToString();
-        if(this.catLife < 1){
-             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
         colliding = Physics2D.Linecast(startLine.position, endLine.position, layer);
     }
 
@@ -82,17 +76,59 @@ public class CatIA : MonoBehaviour
             this.state = "STOPED";
             if(!isIntangible){
                 this.catLife--;
+                CheckDeath();  
                 isIntangible = true;
-                Invoke("NotIntangible", 1f);
+                ShowHeart();
+                StartCoroutine(NotIntangible());
         }
             
         }
         
     }
+
+    void CheckDeath(){
+        if(this.catLife < 1){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
     
-    void NotIntangible(){
+    IEnumerator NotIntangible(){
+        yield return new WaitForSeconds(1f);
         isIntangible = false;
         this.state = "RUN";
+    }
+
+    void ShowHeart(){
+        switch (catLife)
+        {
+            case 6:
+                heartCat[6].enabled = false;
+                break;
+            case 5:
+                heartCat[5].enabled = false;
+                break;
+            case 4:
+                heartCat[4].enabled = false;
+                break;
+            case 3:
+                heartCat[3].enabled = false;
+                break;
+            case 2:
+                heartCat[2].enabled = false;
+                break;
+            case 1:
+                heartCat[1].enabled = false;
+                break;
+            case 0:
+                heartCat[0].enabled = false;
+                break;
+            default:
+                for(int i = 0; i< 6; i++){
+                    heartCat[i].enabled = true;
+                }
+                break;
+
+        }
     }
 
 }
