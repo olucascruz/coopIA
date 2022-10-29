@@ -63,7 +63,9 @@ public class EnemyOnGround : Enemy
     {
         if(collision.gameObject.tag == "Arrow")
         {
-            FindObjectOfType<AudioManager>().Play("DogHit");    
+            if(FindObjectOfType<AudioManager>() != null){
+                FindObjectOfType<AudioManager>().Play("DogHit");
+            }    
             Destroy(gameObject, 0.1f);
         }
     }

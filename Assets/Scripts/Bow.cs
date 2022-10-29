@@ -56,7 +56,9 @@ public class Bow : MonoBehaviour
 
     public void Shoot(){
         // Som
-        FindObjectOfType<AudioManager>().Play("ArrowSound");
+        if(FindObjectOfType<AudioManager>() != null){
+            FindObjectOfType<AudioManager>().Play("ArrowSound");
+        }
 
         GameObject newArrow = Instantiate(arrow, shotPoint.position, shotPoint.rotation);
 
