@@ -123,6 +123,7 @@ public class CatIA : MonoBehaviour
         {
             this.state = "STOPED";
             if(!isIntangible){
+                FindObjectOfType<AudioManager>().Play("CatHit");
                 this.catLife--;
                 CheckDeath();  
                 isIntangible = true;

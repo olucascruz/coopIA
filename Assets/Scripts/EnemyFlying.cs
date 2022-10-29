@@ -54,7 +54,8 @@ public class EnemyFlying : Enemy
         }
         if(collision.gameObject.tag == "Arrow")
         {
-           Destroy(gameObject, 0.1f);
+            FindObjectOfType<AudioManager>().Play("BatHit");
+            Destroy(gameObject, 0.1f);
         }
         
     }

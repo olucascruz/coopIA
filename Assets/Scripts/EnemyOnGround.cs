@@ -58,4 +58,13 @@ public class EnemyOnGround : Enemy
         rig.velocity = new Vector2(speed * Time.deltaTime, rig.velocity.y);   
     }
 
+
+     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Arrow")
+        {
+            FindObjectOfType<AudioManager>().Play("DogHit");    
+            Destroy(gameObject, 0.1f);
+        }
+    }
 }
