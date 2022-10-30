@@ -33,6 +33,7 @@ public class CatIA : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); 
         lineRenderer = GetComponent<LineRenderer>();
+        
     }
 
     
@@ -47,7 +48,7 @@ public class CatIA : MonoBehaviour
         
         if(this.state == "RUN"){
             Move();
-            if(isGround && colliding){
+            if((isGround && colliding)){
                 Jump();
             }
         }
@@ -58,6 +59,7 @@ public class CatIA : MonoBehaviour
     public void Move(){
         rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
     }
+
 
     void Jump()
     {        

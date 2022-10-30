@@ -6,14 +6,14 @@ public class Arrow : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool hasHit = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, 3f);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if(hasHit == false){
@@ -23,9 +23,17 @@ public class Arrow : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+        if(other.gameObject.layer == 7)
+        {
+            gameObject.tag = "Untagged";   
+        }
      hasHit = true;
      rb.velocity = Vector2.zero;
-     rb.isKinematic = true;   
+     rb.isKinematic = true;
     }
 
 
